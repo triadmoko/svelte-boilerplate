@@ -13,7 +13,9 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:unit": "vitest",
-		"test": "npm run test:unit -- --run"
+		"test": "npm run test:unit -- --run",
+		"swag-local": "npx swagger-typescript-api generate -p http://localhost:9001/swagger/doc.json -o ./src/lib/api -n api.ts --axios ",
+		"swag": "npx swagger-typescript-api generate -p http://domain.com/swagger/doc.json -o ./src/lib/api -n api.ts --axios "
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.4",
