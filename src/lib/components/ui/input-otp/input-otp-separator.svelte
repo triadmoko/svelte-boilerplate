@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { HTMLAttributes } from "svelte/elements";
+	import IconMinus from '@tabler/icons-svelte/icons/minus';
 	import type { WithElementRef } from "$lib/utils.js";
 	import { cn } from "$lib/utils.js";
-	import { IconMinus } from '@tabler/icons-svelte';
+	import type { HTMLAttributes } from "svelte/elements";
 
 	let {
 		ref = $bindable(null),

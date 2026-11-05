@@ -1,9 +1,9 @@
 <script lang="ts">
+	import IconSelector from '@tabler/icons-svelte/icons/selector';
 	import { cn, type WithElementRef } from "$lib/utils.js";
 	import type { HTMLSelectAttributes } from "svelte/elements";
-	import { IconSelector } from '@tabler/icons-svelte';
 
-	type NativeSelectProps = Omit<WithElementRef<HTMLSelectAttributes>, "size"> & {
+	type NativeSelectProps = Omit<WithElementRef<HTMLSelectAttributes, HTMLSelectElement>, "size"> & {
 		size?: "sm" | "default";
 	};
 
@@ -19,7 +19,7 @@
 
 <div
 	class={cn(
-		"cn-native-select-wrapper group/native-select relative w-fit has-[select:disabled]:opacity-50",
+		"group/native-select relative w-fit has-[select:disabled]:opacity-50",
 		className
 	)}
 	data-slot="native-select-wrapper"

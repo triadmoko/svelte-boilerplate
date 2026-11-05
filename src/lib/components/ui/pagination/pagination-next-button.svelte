@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Pagination as PaginationPrimitive } from "bits-ui";
-	import { IconChevronRight } from '@tabler/icons-svelte';
+	import IconChevronRight from '@tabler/icons-svelte/icons/chevron-right';
 	import { cn } from "$lib/utils.js";
 	import { buttonVariants } from "../button/index.js";
 
@@ -14,7 +14,7 @@
 
 {#snippet Fallback()}
 	<span>Next</span>
-	<IconChevronRight class={cn("size-4", className)} />
+	<IconChevronRight class={cn("cn-rtl-flip size-4", className)} />
 {/snippet}
 
 <PaginationPrimitive.NextButton

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Calendar as CalendarPrimitive } from "bits-ui";
-	import { IconChevronLeft } from '@tabler/icons-svelte';
+	import IconChevronLeft from '@tabler/icons-svelte/icons/chevron-left';
 	import { buttonVariants, type ButtonVariant } from "$lib/components/ui/button/index.js";
 	import { cn } from "$lib/utils.js";
 
@@ -16,14 +16,15 @@
 </script>
 
 {#snippet Fallback()}
-	<IconChevronLeft class={cn("size-4", className)} />
+	<IconChevronLeft class={cn("cn-rtl-flip size-4", className)} />
 {/snippet}
 
 <CalendarPrimitive.PrevButton
 	bind:ref
 	class={cn(
 		buttonVariants({ variant }),
-		"size-(--cell-size) bg-transparent p-0 select-none disabled:opacity-50 rtl:rotate-180",
+		"size-(--cell-size) bg-transparent p-0 select-none disabled:opacity-50",
+		"rtl:rotate-180",
 		className
 	)}
 	{...restProps}

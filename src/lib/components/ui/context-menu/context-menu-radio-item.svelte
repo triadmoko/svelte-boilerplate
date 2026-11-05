@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { ContextMenu as ContextMenuPrimitive } from "bits-ui";
+	import IconCheck from '@tabler/icons-svelte/icons/check';
 	import { cn, type WithoutChild } from "$lib/utils.js";
-	import { IconCheck } from '@tabler/icons-svelte';
 
 	let {
 		ref = $bindable(null),
 		class: className,
 		inset,
 		children: childrenProp,
+		closeOnSelect = false,
 		...restProps
 	}: WithoutChild<ContextMenuPrimitive.RadioItemProps> & {
 		inset?: boolean;
@@ -16,6 +17,7 @@
 
 <ContextMenuPrimitive.RadioItem
 	bind:ref
+	{closeOnSelect}
 	data-slot="context-menu-radio-item"
 	data-inset={inset}
 	class={cn(

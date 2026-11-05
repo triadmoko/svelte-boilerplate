@@ -1,7 +1,7 @@
 <script lang="ts">
+	import IconChevronRight from '@tabler/icons-svelte/icons/chevron-right';
 	import { cn, type WithElementRef } from "$lib/utils.js";
 	import type { HTMLLiAttributes } from "svelte/elements";
-	import { IconChevronRight } from '@tabler/icons-svelte';
 
 	let {
 		ref = $bindable(null),
@@ -22,6 +22,6 @@
 	{#if children}
 		{@render children?.()}
 	{:else}
-		<IconChevronRight  />
+		<IconChevronRight class="cn-rtl-flip" />
 	{/if}
 </li>

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Pagination as PaginationPrimitive } from "bits-ui";
-	import { cn } from "$lib/utils.js";
+	import IconChevronLeft from '@tabler/icons-svelte/icons/chevron-left';
 	import { buttonVariants } from "$lib/components/ui/button/index.js";
-	import { IconChevronLeft } from '@tabler/icons-svelte';
+	import { cn } from "$lib/utils.js";
 
 	let {
 		ref = $bindable(null),
@@ -21,6 +21,6 @@
 	)}
 	{...restProps}
 >
-	<IconChevronLeft data-icon="inline-start" />
-	<span class="cn-pagination-previous-text hidden sm:block">Previous</span>
+	<IconChevronLeft data-icon="inline-start" class="cn-rtl-flip" />
+	<span class="hidden sm:block">Previous</span>
 </PaginationPrimitive.PrevButton>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { RangeCalendar as RangeCalendarPrimitive } from "bits-ui";
+	import IconChevronDown from '@tabler/icons-svelte/icons/chevron-down';
 	import { cn, type WithoutChildrenOrChild } from "$lib/utils.js";
-	import { IconChevronDown } from '@tabler/icons-svelte';
 
 	let {
 		ref = $bindable(null),
@@ -14,7 +14,7 @@
 
 <span
 	class={cn(
-		"has-focus:border-ring border-input has-focus:ring-ring/50 relative flex rounded-md border shadow-xs has-focus:ring-[3px]",
+		"relative flex rounded-md border border-input shadow-xs has-focus:border-ring has-focus:ring-[3px] has-focus:ring-ring/50",
 		className
 	)}
 >
@@ -26,17 +26,17 @@
 						value={monthItem.value}
 						selected={value !== undefined
 							? monthItem.value === value
-							: monthItem.value === selectedMonthItem.value}
+							: monthItem.value === selectedMonthItem?.value}
 					>
 						{monthItem.label}
 					</option>
 				{/each}
 			</select>
 			<span
-				class="[&>svg]:text-muted-foreground flex h-(--cell-size) items-center gap-1 rounded-md ps-2 pe-1 text-sm font-medium select-none [&>svg]:size-3.5"
+				class="flex h-(--cell-size) items-center gap-1 rounded-md ps-2 pe-1 text-sm font-medium select-none [&>svg]:size-3.5 [&>svg]:text-muted-foreground"
 				aria-hidden="true"
 			>
-				{monthItems.find((item) => item.value === value)?.label || selectedMonthItem.label}
+				{monthItems.find((item) => item.value === value)?.label || selectedMonthItem?.label}
 				<IconChevronDown class={cn("size-4", className)} />
 			</span>
 		{/snippet}
